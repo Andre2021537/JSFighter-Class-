@@ -60,9 +60,14 @@ class Fighter {
   }
 
   double(target) {
-    this.attack(target);
-    this.attack(target);
-    endTurn();
+    if (this.sp > 0) { //If attackers SP is greater than 0
+      this.sp = this.sp - 2; //Attackers sp - 2
+      this.attack(target); //Attack Victim
+      this.attack(target); //Attack Victim
+      endTurn();
+    } else {
+      this.sp = 0; //Sets ATtackers SP to 0
+    }
   }
 
   //this logs that they recovered
