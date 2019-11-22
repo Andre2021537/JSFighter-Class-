@@ -60,11 +60,11 @@ class Fighter {
   }
 
   double(target) {
+    this.attack(target); //Attack Victim
+    endTurn();
     if (this.sp > 0) { //If attackers SP is greater than 0
       this.sp = this.sp - 2; //Attackers sp - 2
-      this.attack(target); //Attack Victim
-      this.attack(target); //Attack Victim
-      endTurn();
+      this.attack(target); //Attack Victim x2
     } else {
       this.sp = 0; //Sets ATtackers SP to 0
     }
