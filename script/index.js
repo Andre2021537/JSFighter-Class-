@@ -56,12 +56,18 @@ class Fighter {
 
   single(target) {
     this.attack(target);
+    //Recovers SP
+    Player0.sp = Player0.sp + 1;
+    Player1.sp = Player1.sp + 1;
     endTurn();
   }
 
   double(target) {
     this.attack(target);
     this.attack(target);
+    //Recovers SP
+    Player0.sp = Player0.sp + 1;
+    Player1.sp = Player1.sp + 1;
     endTurn();
   }
 
@@ -74,7 +80,7 @@ class Fighter {
     //if they have enough Sp
     if (this.sp >=3) {
       //minus 3 sp from total sp
-      this.sp = this.sp- 3;
+      this.sp = this.sp- 5;
       //calculate recovery
        let recovery = this.tek * 2;
        //heal player
